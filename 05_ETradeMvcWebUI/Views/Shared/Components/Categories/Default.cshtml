@@ -1,0 +1,28 @@
+﻿@model List<ETradeBusiness.Models.CategoryModel>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @ViewData["Title"]
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Name)*@
+                    @Html.ActionLink(item.Name, "Index", "Products", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
